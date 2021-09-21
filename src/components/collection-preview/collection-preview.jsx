@@ -8,11 +8,11 @@ const CollectionPreview = ({ title, items }) => (
   <div className='collection-preview'>
     <h1 className='title'>{title.toUpperCase()}</h1>
     <div className='preview'>
-      {items
+      {items.length > 0 ? items
         .filter((item, idx) => idx < 4)
         .map(item => (
           <CollectionItem key={item.id} item={item} />
-        ))}
+        )): <h6>Opps, stock is empty! Come back in few time..</h6>}
     </div>
   </div>
 );
